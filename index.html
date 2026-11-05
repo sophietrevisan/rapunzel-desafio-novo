@@ -3,20 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torre da Rapunzel</title>
+    <title>Rapunzel: A Fuga das Lanternas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>O Conto da Rapunzel</h1>
-    </header>
-    <main>
-        <div class="tower">
-            <p id="message">Rapunzel, Rapunzel, jogue suas tranças!</p>
-            <button id="hairButton">Chamar Rapunzel</button>
-            <div id="hair" class="hidden"></div>
+    <div id="game-container">
+        <!-- Tela de Início -->
+        <div id="start-screen" class="screen">
+            <h1>🌸 Rapunzel 🌸</h1>
+            <h2>A Fuga das Lanternas</h2>
+            <p>Ajude a Rapunzel a coletar as lanternas flutuantes e evitar as frigideiras e caixas caindo da torre!</p>
+            <div class="controls-hint">
+                <p><strong>Controles:</strong> Use o <strong>Mouse</strong> ou as <strong>Setas do Teclado (⬅️ ➡️)</strong> para se mover.</p>
+            </div>
+            <button id="start-btn" class="btn">Jogar Agora</button>
         </div>
-    </main>
+
+        <!-- Painel de Pontuação e Vidas -->
+        <div id="hud" class="hidden">
+            <div class="hud-item">✨ Pontos: <span id="score">0</span></div>
+            <div class="hud-item">🏆 Recorde: <span id="high-score">0</span></div>
+            <div class="hud-item">💜 Vidas: <span id="lives">❤️❤️❤️</span></div>
+        </div>
+
+        <!-- Elementos do Jogo -->
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+        <!-- Tela de Game Over -->
+        <div id="game-over-screen" class="screen hidden">
+            <h1 class="over-title">Ops!</h1>
+            <p>Rapunzel foi atingida!</p>
+            <div class="final-stats">
+                <p>Pontuação Final: <strong id="final-score">0</strong></p>
+                <p>Melhor Pontuação: <strong id="final-high-score">0</strong></p>
+            </div>
+            <button id="restart-btn" class="btn">Jogar Novamente</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
